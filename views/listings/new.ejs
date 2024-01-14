@@ -1,0 +1,74 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+          <h3>form to create a listing of a new resort</h3>
+          <form method="post" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data" >
+            <div class="mb-3">
+              <label for="title"  class="form-label">TITLE:</label>
+              <input name="listing[title]" placeholder="enter a catchy title"  class="form-control" type="text" required />
+              <div class="valid-feedback">title is correct.</div>
+            </div>
+            <br/><br/>
+            <div class="mb-3">
+              <label for="description" class="form-label" >DESCRIPTION:</label>
+              <textarea name="listing[description]" placeholder="enter the description...."  class="form-control" type="text" required></textarea>
+              <div class="invalid-feedback">description should not be empty.</div>       
+            </div>
+            
+            <br/><br/>
+            <div class="mb-3">
+              <label for="image" class="form-label" >UPLOAD-IMAGE</label>
+              <input name="listing[image]" class="form-control" type="file"  />
+              
+            </div>
+            <br/>
+            <div class="row">
+              <div class="mb-3 col-md-4">
+                <label for="price" class="form-label" >PRICE:</label>
+                <input name="listing[price]" placeholder="enter price for one da & night"  class="form-control" type="text" required />
+                <div class="invalid-feedback">price should be valid</div>    
+              </div>
+              <br/>
+
+              <div class="mb-3 col-md-4">
+                <label for="groupname" class="form-label">Classify Your Place!</label>
+                <select class="form-control mb-3 mt-2 col-md-4"  id="groupname" name="listing[groupname]">
+                  <option value="mountain">Mountain-adventures!</option>
+                  <option value="trending">Trending Places!</option>
+                  <option value="farms">Farm Houses!</option>
+                  <option value="snowflakes">Ice & Snow!</option>
+                  <option value="castles/forts">Castles & Forts!</option>
+                  <option value="gardens">Gardens!</option>
+                  <option value="amusements">Amusements!</option>
+                  <option value="cities">Cities!</option>
+                  <option value="seaShores">sea-Shores!</option> 
+              </select>                              
+              </div>
+              <br/><br/>  
+          </div>
+
+            
+            <div class="mb-3">
+              <label for="location" class="form-label" >LOCATION</label>
+              <input name="listing[location]" placeholder="enter the near by location"  class="form-control"  type="text" required />
+              <div class="invalid-feedback">location should be valid </div>          
+            </div>
+            <br/>
+
+            <div class="mb-3">
+              <label for="country" class="form-label" >COUNTRY</label>
+              <input name="listing[country]" placeholder="enter the country here..."  class="form-control"  type="text" required />
+              <div class="invalid-feedback">country should be valid </div>        
+            </div>
+            <br/>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary">add in the listing-list</button>
+            </div>        
+          </form>
+        </div>
+    </div>
+  
+    
+</body>

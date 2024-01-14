@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLust</title>
+</head>
+
+
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/listings">Quit</a> 
+        </div>
+      </div>
+    </div>
+</nav>
+<body>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            font-family: "poppins","sans-serif";
+            box-sizing:border-box;
+        }
+        body{
+            background: #001e4d;
+        }
+        .navbar{
+            height:2rem;
+            background-color:#001e4d;
+            margin:0.5rem;
+            margin-top: 1rem;
+            padding:0.5rem;
+            border-radius: 0.4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+    
+        }
+        .nav-link{
+           color: #fff !important;
+           margin-top: 1rem;
+           font-size: 2.5rem;
+
+        }
+        .app{
+            background: #fff;
+            width:90%;
+            max-width:600px;
+            margin:100px auto 0;
+            border-radius:10px;
+            padding:30px;
+           
+           
+        }
+        .app h1{
+            font-size: 25px;
+            color:#222;
+            font-weight: 600;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+            margin-right: 2rem;
+        }
+        .survey{
+            padding: 10px 0;
+        }
+        .survey h2{
+            font-size:18px;
+            color:#222;
+            font-weight: 600;
+        }
+
+        .btn{
+            background: #fff;
+            color:#222;
+            font-weight: 500;
+            width:100%;
+            border:1px solid #222;
+            padding:10px;
+            margin:10px 0;
+            text-align:left;
+            border-radius: 4px;
+            cursor:pointer;
+            transition: all 0.3s;
+        }.btn:hover:not([disabled]){
+            background: #222;
+            color:#fff;
+        }
+        .btn:disabled{
+            cursor: no-drop;
+
+        }
+        #next-btn{
+            background-color: #001e4d;
+            color: #fff;
+            font-weight: 500;
+            width:150px;
+            border:0;
+            padding:10px;
+            margin: 20px auto 0;
+            border-radius: 4px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .max{
+            background: #9aeabc;
+        }
+        .min{
+            background: rgba(246, 246, 47, 0.808);
+        }
+        .nil{
+            background: #ef2d2d;
+        }
+        .box{
+            display: flex;
+            width:12rem;          
+            height:5rem;
+            align-items: center;
+            justify-content:left;
+            
+            
+        }
+        .max-votes{
+            width:4rem;
+            height:3rem;
+            border-radius: 20%;
+            background-color: #9aeabc;
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            margin-left:0.5rem;
+            margin-top:0.5rem;
+         
+
+        }
+        .min-votes{
+            width:4rem;
+            height:3rem;
+            border-radius: 20%;           
+            background-color:rgba(246, 246, 47, 0.808);
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+            margin-left:0.5rem;
+            margin-top:0.5rem;
+
+        }
+
+
+    </style>
+    <div class="app">
+        <h1>Survey!</h1>
+        <div class="box">
+            <div class="max-votes">Max-Votes</div>
+            <div class="min-votes">Min-Votes</div>
+        </div>
+       
+        <div class="survey">
+            <h2 id="question">Ques goes here</h2>
+            <div id="answer-buttons">
+                <button class="btn">ans 1</button>
+                <button class="btn">ans 2</button>
+                <button class="btn">ans 3</button>
+                <button class="btn">ans 4</button>
+            </div>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+    <script src="/css/js/survey.js"></script>
+
+</body>
+</html>

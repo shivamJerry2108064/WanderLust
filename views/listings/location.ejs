@@ -1,0 +1,52 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+    <div class="row mt-3">
+        <div class="col-6 offset-3">
+            <h3><%=locationListing.title%>:</h3>
+        </div>
+        <div class="card col-6 offset-3 show-card">
+            <img src="<%=locationListing.image.url%>" class="card-img-top show-img" alt="listing_image"/><br/>
+            <div class="card-body">
+                <p class="card-text">
+                    <p><b>=> owned by:<%=locationListing.owner.username%> </b></p>
+                    <p><b>=> contact:<%=locationListing.owner.email%> </b></p><br/>
+                    
+                    <p>=><%=locationListing.location%></p>
+                    <b>=><%=locationListing.country%></b><br/>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3 mb-3">
+        <div class="col-11 offset-1">
+            <h4>Location of the venue:</h4>
+            <div id="map" ></div>
+        </div>
+    </div>
+
+
+
+    <!-- js code to get a map... -->
+    <script>
+        const  mapToken="<%= process.env.MAP_TOKEN %>";
+        const listing=<%- JSON.stringify(locationListing)%>;
+        
+
+        // console.log(coordinates);
+
+        
+        mapboxgl.accessToken = mapToken;
+    const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style:"mapbox://styles/mapbox/streets-v12",
+    center: listing.geometry.coordinates, // starting position [lng, lat]
+    zoom: 7 // starting zoom
+    });
+
+    const marker1 = new mapboxgl.Marker({color:"red"})
+    .setLngLat(listing.geometry.coordinates)
+    .setPopup(new mapboxgl.Popup({offset: 25}).setHTML(`<h2>${listing.location}</h2> <p><b>${listing.title}</b></p>`))
+    .addTo(map);
+    </script>
+
+
+    

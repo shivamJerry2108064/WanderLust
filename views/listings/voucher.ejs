@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderLust</title>
+</head>
+
+
+<nav class="navbar navbar-expand-lg bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/listings">Quit</a> 
+        </div>
+      </div>
+    </div>
+</nav>
+<body>
+    <style>
+        
+    *{
+        font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    }
+    body{
+        text-align : center;
+        margin:auto;
+        background-color: #45e17c;
+        
+    }
+    .navbar{
+    height:3rem;
+    background-color:#45e17c;
+    margin:0.5rem;
+    padding:0.5rem;
+    border-radius: 0.4rem;
+}
+
+.nav-link{
+    color: #222 !important;
+    align-items: end;
+    font-size: 2rem;
+
+}
+    h1,h2,h4{
+        color: #222;
+    }
+    
+    
+    .btn-container{
+        height:600px;
+        width:900px;
+        display:flex;
+        justify-content: center;
+        align-content: center;
+        margin:auto;
+        margin-top:1.5rem;
+        
+       
+    }
+    .btn{
+        height:200px;
+        width:200px;
+        border:5px solid black;
+        margin:0.3rem;   
+    }
+    .red{
+        border-top-left-radius: 100%;
+        background-color:rgb(236, 9, 28);
+    }
+    .green{
+        border-bottom-left-radius: 100%;
+        background-color: #059033;
+    }
+    .yellow{
+        border-top-right-radius: 100%;
+        background-color:yellow;
+    }
+    
+    .blue{
+        border-bottom-right-radius: 100%;
+        background-color: #006994;
+    }
+    .button{
+        height: 10px;
+        width:30px;
+    }
+    
+    
+    
+    
+    .flash{
+        background-color: mistyrose;
+    }
+    
+    .userFlash{
+        background-color: rgb(173, 10, 173);
+    }
+    
+</style>
+
+
+
+    <h1>SIMON SAYS GAME - let'see how long a sequence can your remember?</h1>
+    <h2>press "s" to start the game and won a chance to get a voucher or Quit...</h2>
+    
+    <div class="btn-container">
+        <div class="line-one">
+            <div class="btn red " type="button" id="red"></div>
+            <div class="btn green " type="button" id="green"></div>
+        </div>
+        <div class="line-two">
+            <div class="btn yellow" type="button" id="yellow"></div>
+            <div class="btn blue" type="button" id="blue"></div>
+        </div>
+    </div>
+
+    <!-- <h4>want to quit the game , click - <button><a href="/listings"></a></button></h4> -->
+    
+    <script src="/css/js/simon.js">
+        
+    </script>
+
+    
+</body>
+</html>

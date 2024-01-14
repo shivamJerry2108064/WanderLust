@@ -1,0 +1,79 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h3>form to create a listing of a new resort</h3>
+            <form method="post" action="/listings/<%=edit_Listing._id%>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">TITLE:</label>
+                    <input name="listing[title]" value="<%=edit_Listing.title%>"  class="form-control" type="text"required/>
+                    <div class="invalid-feedback">
+                        title should not be empty...
+                    </div>
+                    <div class="valid-feedback">looks good</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">DESCRIPTION:</label>
+                    <textarea name="listing[description]"  type="text"  class="form-control"required > value="<%=edit_Listing.description%>" </textarea>
+                    <div class="invalid-feedback">
+                        description should not be empty...
+                    </div>
+                    <div class="valid-feedback">looks good</div>
+                </div>
+
+                <div class="mb-3">
+                    <p>Original Listing Image:</p>
+                    <img src="<%=originalImageUrl%>" />
+                </div>
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">UPLOAD NEW  IMAGE:</label>
+                    <input name="listing[image]"  class="form-control" type="file" />
+                    <div class="invalid-feedback">
+                        image should not be empty...
+                    </div>
+                    <div class="valid-feedback">looks good</div>
+                </div>
+                
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="title" class="form-label">PRICE:</label>
+                        <input name="listing[price]" value="<%=edit_Listing.price%>"  required class="form-control" type="text"/>
+                        <div class="invalid-feedback">price should not be empty...</div>
+                        <div class="valid-feedback">looks good</div>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <label for="groupname" class="form-label">Classify Your Place!</label>
+                        <select class="form-control mb-3 mt-2 col-md-4"  id="groupname" name="listing[groupname]">
+                          <option value="mountain">Mountain-adventures!</option>
+                          <option value="trending">Trending Places!</option>
+                          <option value="farms">Farm Houses!</option>
+                          <option value="snowflakes">Ice & Snow!</option>
+                          <option value="castles/forts">Castles & Forts!</option>
+                          <option value="gardens">Gardens!</option>
+                          <option value="amusements">Amusements!</option>
+                          <option value="cities">Cities!</option>
+                          <option value="seaShores">sea-Shores!</option> 
+                      </select>                              
+                      </div>                   
+                </div><br/>
+                <div class="mb-3 col-md-8">
+                    <label for="title" class="form-label">LOCATION:</label>
+                    <input name="listing[location]" value="<%=edit_Listing.location%>"  class="form-control" required type="text"/>
+                    <div class="invalid-feedback">location should not be empty...</div>
+                    <div class="valid-feedback">looks good</div>
+                </div><br/>
+                <div class="mb-3">
+                    <label for="title" class="form-label">COUNTRY:</label>
+                    <input name="listing[country]" value="<%=edit_Listing.country%>"  class="form-control" required type="text"/>
+                    <div class="invalid-feedback">country should not be empty...</div>
+                    <div class="valid-feedback">looks good</div>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-secondary">update now</button>
+                </div>               
+            </form>
+        </div>
+    </div>
+</body>
